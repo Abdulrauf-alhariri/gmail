@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/send" method="post" id="form">
+      <input type="text" name="to" id="to" />
+      <input type="submit" value="send" />
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const to = document.getElementById("to");
+
+        try {
+          await axios.post("/send", {
+            to: to,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    </script>
+  </body>
+</html>
