@@ -21,9 +21,11 @@
         const to = document.getElementById("to");
 
         try {
-          await axios.post("/send", {
+          const { data } = await axios.post("/send", {
             to: to,
           });
+
+          console.log(data);
         } catch (error) {
           console.log(error);
         }
