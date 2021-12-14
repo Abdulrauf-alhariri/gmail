@@ -21,7 +21,7 @@ app.post("/send", async (req, res) => {
 
     await transport.sendMail({
       from: "dorent.uf@gmail.com",
-      to: "noyar28451@mediafate.com",
+      to: "dosome6502@ningame.com",
       text: "Hello",
     });
     res.json({ status: "Success", message: "mail is sent" });
